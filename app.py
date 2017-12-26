@@ -1,5 +1,5 @@
-from PIL import Image
 import face_recognition
+from PIL import Image
 
 # 输入图片
 img_path = input("image path:")

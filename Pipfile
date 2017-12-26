@@ -13,6 +13,7 @@ face-recognition = "*"
 
 [dev-packages]
 
+pylint = "*"
 
 
 [requires]
