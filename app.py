@@ -1,10 +1,32 @@
+"""
+python为图片拼接圣诞帽
+"""
+
 import face_recognition
-from PIL import Image
+# from PIL import Image
 
-# 输入图片
-img_path = input("image path:")
-image = face_recognition.load_image_file(img_path)
-face_locations = face_recognition.face_locations(image)
-face_count = len(face_locations)
+class ChristmasHatService:
+    """
+    ChristmasHat
+    """
+    def __init__(self):
+        self.img_path = input("Please input base image full path:")
+        self.face_locations = []
 
-print(f"Found {face_count} face(s) in this photograph.")
+    def recognize_faces(self):
+        """
+        recognize faces in base img
+        """
+        image = face_recognition.load_image_file(self.img_path)
+        self.face_locations = face_recognition.face_locations(image)
+
+    def face_count_in_base_img(self):
+        """
+        recognize faces in base img
+        """
+        face_count = len(self.face_locations)
+        return face_count
+
+CHRISTMAS_HAT_SERVICE = ChristmasHatService()
+CHRISTMAS_HAT_SERVICE.recognize_faces()
+print(f"Found {CHRISTMAS_HAT_SERVICE.face_count_in_base_img()} face(s) in this photograph.")
